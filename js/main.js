@@ -42,4 +42,14 @@ function showPage(pageNumber) {
   });
 
 
+  document.querySelectorAll("#pagination button").forEach((btn) => btn.classList.remove("active"));
+  const btn = document.getElementById(`button${pageNumber}`);
+  if (btn) btn.classList.add("active");
 }
+
+
+for (let i = 1; i <= 5; i++) {
+  const btn = document.getElementById(`button${i}`);
+  btn.addEventListener("click", () => showPage(i));
+}
+getCharacters();
