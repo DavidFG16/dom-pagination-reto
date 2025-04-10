@@ -52,4 +52,17 @@ for (let i = 1; i <= 5; i++) {
   const btn = document.getElementById(`button${i}`);
   btn.addEventListener("click", () => showPage(i));
 }
+
+document.getElementById("previous").addEventListener("click", () => {
+  if (currentPage > 1) {
+    showPage(currentPage - 1);
+  }
+});
+
+document.getElementById("next").addEventListener("click", () => {
+  if (currentPage < 5) {
+    showPage(currentPage + 1);
+  }
+});
+
 getCharacters();
