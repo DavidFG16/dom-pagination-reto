@@ -25,4 +25,21 @@ function showPage(pageNumber) {
   const currentCharacters = characters.slice(startIndex, endIndex);
 
   cardsContainer.innerHTML = "";
+
+  currentCharacters.forEach((char) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+      <img class="card-image" src="${char.images[0]}" alt="${char.name}">
+      <div class="card-content">
+          <h2 class="card-title">${char.name}</h2>
+          <p class="card-head">${char.debut?.manga || "Sin dato"}</p>
+          <p class="card-description">${char.personal?.clan || "Clan desconocido"}</p>
+      </div>
+    `;
+    cardsContainer.appendChild(card);
+  });
+
+
 }
